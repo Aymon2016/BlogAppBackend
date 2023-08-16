@@ -8,12 +8,9 @@ router
 
 router
     .route('/api/v1/articles/:id')
-    .get((req, res) => {
-        console.log(req.path);
-        res.end();
-    })
-    .put(() => { })
-    .patch(() => { })
-    .delete(() => { });
+    .get(() => { articleController.findSingle })
+    .put(() => { articleController.updateItem })
+    .patch(() => { articleController.updateItemPatch })
+    .delete(() => { articleController.removeItem });
 
 module.exports = router;

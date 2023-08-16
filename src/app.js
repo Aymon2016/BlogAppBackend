@@ -1,6 +1,6 @@
 const express = require('express');
-const applyMfddleware = require('../middleware/index')
-const routes = require('../routes/index.js')
+const applyMfddleware = require('./middleware/index')
+const routes = require('./routes/index.js')
 const app = express();
 
 applyMfddleware(app)
