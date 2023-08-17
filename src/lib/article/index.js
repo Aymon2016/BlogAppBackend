@@ -2,6 +2,7 @@
 const Article = require('../../model/Article');
 const defaults = require('../../config/defaults');
 const { NotFound } = require('express-openapi-validator/dist/openapi.validator');
+const updateArticleV2 = require('./updateArticleV2')
 
 
 const removeItem = async (id) => {
@@ -171,5 +172,6 @@ module.exports = {
     findSingleItem,
     updateOrCreate,
     updateProperties,
-    removeItem
+    removeItem,
+    updateArticleV2,
 };
