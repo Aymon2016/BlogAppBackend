@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const { controllers: articleController } = require('../api/v1/article');
 const { controllers: articleControllerV2 } = require('../api/v2/article/index')
+const { controllers: authController } = require('../api/v1/auth');
+// Auth routes
+router
+    .post('/api/v1/auth/register', authController.register)
+    .post('/api/v1/auth/login', authController.login);
 
 router
     .route('/api/v1/articles')

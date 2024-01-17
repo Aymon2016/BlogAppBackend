@@ -1,7 +1,12 @@
 const defaults = require('../config/defaults')
+
 const generateQueryString = require('./qs')
 
-const getPagination = (totalItems = defaults.totalItems, page = defaults.page, limit = defaults.limit) => {
+const getPagination = (
+    totalItems = defaults.totalItems,
+    page = defaults.page,
+    limit = defaults.limit
+) => {
 
     const totalPage = Math.ceil(totalItems / limit);
 

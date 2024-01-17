@@ -165,6 +165,17 @@ const findSingleItem = async ({ id, expand = '' }) => {
     };
 };
 
+const checkOwnership = async ({ resourceId, userId }) => {
+    const article = await Article.findById(resourceId);
+    if (!article) throw notFound();
+
+    if (article._doc.author.toString() === userId) {
+        return true;
+    }
+    return false;
+};
+
+
 module.exports = {
     create,
     findAll,
@@ -173,5 +184,6 @@ module.exports = {
     updateOrCreate,
     updateProperties,
     removeItem,
+    checkOwnership,
     updateArticleV2,
 };
